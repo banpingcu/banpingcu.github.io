@@ -17,7 +17,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>闰年 | 醋小虾</title>
+	<title>黄昏 | 醋小虾</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -47,14 +47,14 @@
 
 	<meta property="og:site_name" content="醋小虾">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="闰年 | 醋小虾">
+	<meta property="og:title" content="黄昏 | 醋小虾">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/2019/05/27/闰年/">
+	<meta property="og:url" content="http://yoursite.com/2019/02/22/黄昏/">
 
 	
-	<meta property="article:published_time" content="2019-05-27T16:05:37+08:00"> 
+	<meta property="article:published_time" content="2019-02-22T21:02:00+08:00"> 
 	<meta property="article:author" content="B醋小虾">
-	<meta property="article:published_first" content="醋小虾, /2019/05/27/闰年/">
+	<meta property="article:published_first" content="醋小虾, /2019/02/22/黄昏/">
 	
 </head>
 <body class="post-template">
@@ -128,28 +128,23 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2019-05-27T08:27:27.375Z" itemprop="datePublished">
-                    2019-05-27
+                <time class="post-full-meta-date" datetime="2019-02-22T13:01:24.000Z" itemprop="datePublished">
+                    2019-02-22
                 </time>
                 
                 <span class="date-divider">/</span>
                 
-                <a href="/categories/编程/">编程</a>&nbsp;&nbsp;
+                <a href="/categories/摄影/">摄影</a>&nbsp;&nbsp;
                 
                 
             </section>
-            <h1 class="post-full-title">闰年</h1>
+            <h1 class="post-full-title">黄昏</h1>
         </header>
         <article class="post-full no-image">
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p><strong>输入年、月、日，计算该天是本年的第几天。</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"><span class="comment">//闰年的条件能被4整除但不能被100整除的年份为普通闰年。；</span></span><br><span class="line"><span class="comment">//世纪闰年:能被400整除的为世纪闰年。</span></span><br><span class="line">int runnian(int a)&#123;</span><br><span class="line">    <span class="keyword">if</span> (a%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;a%<span class="number">100</span>!=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (a%<span class="number">400</span>==<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int a,b,c,sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">"%d %d %d"</span>,&amp;a,&amp;b,&amp;c)!=EOF)&#123;</span><br><span class="line">    <span class="keyword">if</span>(runnian(a))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">switch</span>(b<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">11</span>: sum+=<span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">10</span>: sum+=<span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">9</span>: sum+=<span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>: sum+=<span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>: sum+=<span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>: sum+=<span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>: sum+=<span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>: sum+=<span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>: sum+=<span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>: sum+=<span class="number">28</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>: sum+=<span class="number">31</span>;            </span><br><span class="line">        &#125;           </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="keyword">switch</span>(b<span class="number">-1</span>)&#123;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">11</span>: sum+=<span class="number">30</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">10</span>: sum+=<span class="number">31</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">9</span>: sum+=<span class="number">30</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">8</span>: sum+=<span class="number">31</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">7</span>: sum+=<span class="number">31</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">6</span>: sum+=<span class="number">30</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">5</span>: sum+=<span class="number">31</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">4</span>: sum+=<span class="number">30</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">3</span>: sum+=<span class="number">31</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">2</span>: sum+=<span class="number">29</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">1</span>: sum+=<span class="number">31</span>;            </span><br><span class="line">        &#125;           </span><br><span class="line">    &#125;</span><br><span class="line">    sum = sum +c;</span><br><span class="line">    printf(<span class="string">"%d"</span>,sum);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>也可以将每月的日期直接写在数组内然后计算，这样写是为了练习一下switch的用法。</p>
-<p>break和continue的区别:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int k=<span class="number">4</span>,n=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(k)&#123;</span><br><span class="line">        k--;</span><br><span class="line">        <span class="keyword">switch</span>(k)&#123;</span><br><span class="line">           <span class="keyword">default</span> :<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:n++;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:++n;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:<span class="keyword">if</span>(n&gt;=<span class="number">0</span>) <span class="keyword">continue</span>;     </span><br><span class="line">        &#125;</span><br><span class="line">        ++n;      </span><br><span class="line">    &#125;</span><br><span class="line">    printf(<span class="string">"%d\n"</span>,n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>答案是6.<br>k=4时：不变，不执行循环中continue后面的语句<br>k=3时：k=2<br>k=2时：k=5<br>k=1时：k=6</p>
+                    <p>空中看见日落的场景<br><img alt="enter description here" class="post-img b-lazy" href="https://images.pexels.com/photos/2253814/pexels-photo-2253814.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" data-src="https://images.pexels.com/photos/2253814/pexels-photo-2253814.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"></p>
 
                 </div>
             </section>
@@ -160,10 +155,14 @@
     <div style="height: 4vw;width: 100%"></div>
     <nav id="gobottom" class="pagination">
         
+        <a class="prev-post" title="平方数" href="/2019/05/27/平方数/">
+            ← 平方数
+        </a>
+        
         <span class="prev-next-post">•</span>
         
-        <a class="next-post" title="早晨" href="/2019/05/27/早晨/">
-            早晨 →
+        <a class="next-post" title="C语言字符串" href="/2018/12/02/C语言字符串/">
+            C语言字符串 →
         </a>
         
     </nav>
@@ -300,7 +299,7 @@
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">闰年</div>
+    <div class="floating-header-title">黄昏</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
