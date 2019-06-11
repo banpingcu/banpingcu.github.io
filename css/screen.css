@@ -447,10 +447,10 @@ body {
 	background-size: cover;
 }
 
-.site-header:before {
+/*.site-header:before {
 	bottom: 0;
 	background: rgba(0, 0, 0, .18);
-}
+}*/
 
 .site-header:after,
 .site-header:before {
@@ -1789,7 +1789,7 @@ body {
 	box-shadow: 0 0 0 6px hsla(0, 0%, 100%, .1);
 
 	-ms-flex-negative: 0;
-	flex-shrink: 0;;
+	flex-shrink: 0;
 }
 
 .site-header-content .author-bio {
