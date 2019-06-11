@@ -440,10 +440,8 @@ body {
 
 .site-header {
 	position: relative;
-
 	padding-top: 12px;
 	padding-bottom: 12px;
-
 	color: #FFFFFF;
 	background: #090A0B no-repeat 50%;
 	background-size: cover;
@@ -451,7 +449,6 @@ body {
 
 .site-header:before {
 	bottom: 0;
-
 	background: rgba(0, 0, 0, .18);
 }
 
@@ -462,15 +459,12 @@ body {
 	top: 0;
 	right: 0;
 	left: 0;
-
 	display: block;
-
 	content: "";;
 }
 
 .site-header:after {
 	bottom: auto;
-
 	height: 80px;
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .1)), to(transparent));
 	background: linear-gradient(rgba(0, 0, 0, .1), transparent);
@@ -752,19 +746,15 @@ body {
 .post-card {
 	overflow: hidden;
 	flex-direction: column;
-
 	min-height: 300px;
 	margin: 0 20px 40px;
-
 	-webkit-transition: all .5s ease;
 	transition: all .5s ease;
-
 	border-radius: 5px;
 	background: #FFFFFF 50%;
 	background-size: cover;
 	-webkit-box-shadow: 8px 14px 38px rgba(39, 44, 49, .06), 1px 3px 8px rgba(39, 44, 49, .03);
 	box-shadow: 8px 14px 38px rgba(39, 44, 49, .06), 1px 3px 8px rgba(39, 44, 49, .03);
-
 	-webkit-box-direction: normal;
 	-webkit-box-flex: 1;
 	-webkit-box-orient: vertical;
@@ -778,7 +768,6 @@ body {
 	transition: all .4s ease;
 	-webkit-transform: translate3D(0, -1px, 0) scale(1.02);
 	transform: translate3D(0, -1px, 0) scale(1.02);
-
 	-webkit-box-shadow: 8px 28px 50px rgba(39, 44, 49, .07), 1px 6px 12px rgba(39, 44, 49, .04);
 	box-shadow: 8px 28px 50px rgba(39, 44, 49, .07), 1px 6px 12px rgba(39, 44, 49, .04);;
 }
@@ -984,7 +973,6 @@ body {
 @media (min-width:795px) {
 	.home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
 		flex-direction: row;
-
 		-webkit-box-direction: normal;
 		-webkit-box-flex: 1;
 		-webkit-box-orient: horizontal;

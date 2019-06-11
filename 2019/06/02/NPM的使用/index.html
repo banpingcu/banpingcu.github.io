@@ -17,7 +17,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>C语言字符串 | 醋小虾</title>
+	<title>NMP的使用介绍 | 醋小虾</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -47,14 +47,14 @@
 
 	<meta property="og:site_name" content="醋小虾">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="C语言字符串  醋小虾">
+	<meta property="og:title" content="NMP的使用介绍  醋小虾">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/2018/12/02/C语言字符串/">
+	<meta property="og:url" content="http://yoursite.com/2019/06/02/NPM的使用/">
 
 	
-	<meta property="article:published_time" content="2018-12-02T21:12:00+08:00"> 
+	<meta property="article:published_time" content="2019-06-02T21:06:00+08:00"> 
 	<meta property="article:author" content="醋小虾">
-	<meta property="article:published_first" content="醋小虾, /2018/12/02/C语言字符串/">
+	<meta property="article:published_first" content="醋小虾, /2019/06/02/NPM的使用/">
 	
 </head>
 <body class="post-template">
@@ -126,8 +126,8 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2018-12-02T13:01:24.000Z" itemprop="datePublished">
-                    2018-12-2
+                <time class="post-full-meta-date" datetime="2019-06-02T13:01:24.000Z" itemprop="datePublished">
+                    2019-06-2
                 </time>
                 
                 <span class="date-divider">/</span>
@@ -136,14 +136,31 @@
                 
                 
             </section>
-            <h1 class="post-full-title">C语言字符串</h1>
+            <h1 class="post-full-title">NMP的使用介绍</h1>
         </header>
         <article class="post-full no-image">
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p>题目描述<br>给出一个长度不超过1000的字符串，判断它是不是回文(顺读，逆读均相同)的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;//字符串函数库</span><br><span class="line">int main()&#123;</span><br><span class="line">    char a[<span class="number">1000</span>];</span><br><span class="line">	int flag=<span class="number">0</span>,i,j;</span><br><span class="line">	<span class="keyword">while</span>(scanf(<span class="string">"%s"</span>,a)!=EOF)<span class="comment">//CTRL+Z</span></span><br><span class="line">	&#123;</span><br><span class="line">	    <span class="keyword">for</span>(i=<span class="number">0</span>,j=strlen(a)<span class="number">-1</span>;i&lt;j;i++,j--)</span><br><span class="line">		&#123;</span><br><span class="line">		   <span class="keyword">if</span>(a[i]!=a[j])</span><br><span class="line">		   &#123;</span><br><span class="line">		      flag=<span class="number">1</span>;</span><br><span class="line">			  printf(<span class="string">"No!"</span>);</span><br><span class="line">              <span class="keyword">break</span>;<span class="comment">//跳出for循环</span></span><br><span class="line">		   &#125;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==<span class="number">0</span>)</span><br><span class="line">	    &#123;</span><br><span class="line">     	printf(<span class="string">"Yes!"</span>);</span><br><span class="line">	    &#125;  </span><br><span class="line">	&#125;</span><br><span class="line">	 <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                    <p>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种：</p>
+<ol>
+<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用。</li>
+<li>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。</li>
+<li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li>
+</ol>
+<p>由于新版的nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 “npm -v” 来测试是否成功安装。命令如下，出现版本提示表示安装成功:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm -v</span><br><span class="line">2.3.0</span><br></pre></td></tr></table></figure>
+<p>如果你安装的是旧版本的 npm，可以很容易得通过 npm 命令来升级，命令如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install npm -g</span><br><span class="line">/usr/local/bin/npm -&gt; /usr/local/lib/node_modules/npm/bin/npm-cli.js</span><br><span class="line">npm@2.14.2 /usr/local/lib/node_modules/npm</span><br></pre></td></tr></table></figure></p>
+<p>如果是 Window 系统使用以下命令即可：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install <span class="built_in">npm</span> -g</span><br></pre></td></tr></table></figure>
+<p>使用淘宝镜像的命令：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cnpm install npm -g</span></span><br></pre></td></tr></table></figure>
+<p>使用 npm 命令安装模块<br>npm 安装 Node.js 模块语法格式如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> &lt;<span class="keyword">Module</span> <span class="keyword">Name</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>以下实例，我们使用 npm 命令安装常用的 Node.js web框架模块 express:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install express</span><br></pre></td></tr></table></figure>
+<p>安装好之后，express 包就放在了工程目录下的 node_modules 目录中，因此在代码中只需要通过 require(‘express’) 的方式就好，无需指定第三方包路径。</p>
+
                 </div>
             </section>
         </article>
@@ -153,14 +170,10 @@
     <div style="height: 4vw;width: 100%"></div>
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="平方数" href="/2018/12/03/平方数/">
-            ← 平方数
-        </a>
-        
         <span class="prev-next-post">•</span>
         
-        <a class="next-post" title="计算机网络的信道划分" href="/2018/11/02/计算机网络的信道划分/">
-            计算机网络的信道划分 →
+        <a class="next-post" title="早晨" href="/2019/05/27/早晨/">
+            早晨 →
         </a>
         
     </nav>
@@ -293,7 +306,7 @@
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">C语言字符串</div>
+    <div class="floating-header-title">NMP的使用介绍</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
