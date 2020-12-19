@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>数据结构代码部分 | 醋小虾</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="醋小虾">
+	<meta name="description" content>
+
+	
+	<meta name="keywords" content>
+	
+
+	
+	<link rel="shortcut icon" href="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg">
+	<link rel="apple-touch-icon" href="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="https://banpingcu.github.io" title="醋小虾">
+	
+
+	<meta property="og:site_name" content="醋小虾">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="数据结构代码部分  醋小虾">
+	<meta property="og:description" content>
+	<meta property="og:url" content="http://yoursite.com/2020/12/19/数据结构代码整理/">
+
+	
+	<meta property="article:published_time" content="2020-12-19T22:12:00+08:00"> 
+	<meta property="article:author" content="醋小虾">
+	<meta property="article:published_first" content="醋小虾, /2020/12/19/数据结构代码整理/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+              
+               
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+			<li>
+                <a href="http://bs.cuxiaoxia.cn?id=2" title="autor">AUTHOR</a>
+            </li>
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/u/5687948403" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/banpingcu" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2020-12-19T14:01:24.000Z" itemprop="datePublished">
+                    2020-12-19
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/计算机/">计算机</a>&nbsp;&nbsp;
+                
+                
+            </section>
+            <h1 class="post-full-title">数据结构代码部分</h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <p><font color="blue" size="5">数据结构代码部分整理</font><br>[TOC]</p>
+<h3 id="1-线性表部分"><a href="#1-线性表部分" class="headerlink" title="1.线性表部分"></a>1.线性表部分</h3><h4 id="1-1顺序表"><a href="#1-1顺序表" class="headerlink" title="1.1顺序表"></a>1.1顺序表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//顺序表的定义</span><br><span class="line">typedef struct Sqlist&#123;</span><br><span class="line">    int data[maxSize];</span><br><span class="line">    int length;</span><br><span class="line">&#125;Sqlist;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//例题</span><br><span class="line">//试编写一个函数，实现在**顺序方式**下字符串的strcompare(s1,s2)运算。返回信息是（-1，0，1）表示s1&gt;s2,s1=s2,s1&lt;s2。</span><br><span class="line"></span><br><span class="line">Bool  strcompare(s1,s2) &#123;</span><br><span class="line">   int L1, L2;</span><br><span class="line">   int i,j;</span><br><span class="line">   L1=length(s1); </span><br><span class="line">   L2=length(s2);             </span><br><span class="line">   i=0; j=0;</span><br><span class="line">   while (i&lt;L1 &amp;&amp; j&lt;L2) &#123;                   </span><br><span class="line">      if (s1[i]==s2[j]) &#123;i++; j++;&#125;//相同则继续历</span><br><span class="line">      else</span><br><span class="line">         &#123;if (s1[i]&gt;s2[j]) return -1; else return 1;&#125;//不相同则比较大小，return正确的信息</span><br><span class="line">   &#125;//此条while循环结束后说明至少有一个顺序表已经遍历完成</span><br><span class="line">   if (L1==L2) return 0;    </span><br><span class="line">   if (i==L1) return 1;        </span><br><span class="line">   if (j==L2) return -1;       </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//考点：顺序表的遍历，考虑周全即可</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*设计算法判定两个无序集合是否相等。要求：自己定义所用的数据结构。</span><br><span class="line">答案：</span><br><span class="line">此题可采用顺序表或者链表。采用静态存储分配的顺序表定义如下：*/</span><br><span class="line">//与上一题类型相似，基本一样</span><br><span class="line">  #define ListSize 100</span><br><span class="line">  typedef int ElemType;       </span><br><span class="line">  typedef struct &#123;</span><br><span class="line">     ElemType elem[ListSize];</span><br><span class="line">     int listlen;</span><br><span class="line">  &#125; Sqlist;              </span><br><span class="line"></span><br><span class="line">int compare(SqList La, SqList Lb)</span><br><span class="line">&#123;  if ( La-&gt;listlen != Lb-&gt;listlen ) return FALSE;   </span><br><span class="line">    else &#123; </span><br><span class="line">        for ( k=0; k&lt;Lb-&gt;listlen; k++ ) &#123;</span><br><span class="line">           b = Lb-&gt;data[k]; 	</span><br><span class="line">           for (j=0; j&lt;La-&gt;listlen; j++ ) &#123; </span><br><span class="line">               if (La-&gt;data[j]==b)  break; </span><br><span class="line">	       if (j==La-&gt;listlen ) return FALSE; 	</span><br><span class="line">           &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    return TRUE; </span><br><span class="line">   &#125; //else</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-2链表"><a href="#1-2链表" class="headerlink" title="1.2链表"></a>1.2链表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//单链表的定义</span><br><span class="line">typedef struct Lnode&#123;</span><br><span class="line">elemType date;</span><br><span class="line">struct Lnode next;</span><br><span class="line">&#125;LNode,*LinkList;</span><br><span class="line">//双链表的定义</span><br><span class="line">typedef struct Lnode&#123;</span><br><span class="line">elemType date;</span><br><span class="line">struct Lnode next;</span><br><span class="line">struct Lnode prior;</span><br><span class="line">&#125;LNode,*LinkList;</span><br><span class="line">//常见考题</span><br><span class="line">/*有一个不带头结点的单链表，但不同结点的数据域数值可能相同。头指针为head，试编写算法计算数据域为x的结点个数。</span><br><span class="line">要求：先定义所需的单链表结构。程序要有必要的注释。*/</span><br><span class="line">typedef struct node</span><br><span class="line">&#123;	datatype data;</span><br><span class="line">	Struct node *next;</span><br><span class="line">&#125; *LinkList;</span><br><span class="line"></span><br><span class="line">int count(LintList head, datatype x)  </span><br><span class="line">&#123;	LinkList p;</span><br><span class="line">		int sum=0;</span><br><span class="line">		p=head;            </span><br><span class="line">		while(p!=NULL)&#123;</span><br><span class="line">			if (p-&gt;data==x) sum++;    </span><br><span class="line">			p=p-&gt;next;              </span><br><span class="line">&#125;</span><br><span class="line">return sum;</span><br><span class="line">&#125;</span><br><span class="line">//会遍历即可</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//实现带头结点链表的建立</span><br><span class="line">LinkList CreatLinkList( )</span><br><span class="line">&#123;	LinkList L;</span><br><span class="line">	L=(Lnode *)malloc( sizeof(Lnode)  );//表头</span><br><span class="line">	L-&gt;next=NULL; r=L; </span><br><span class="line">	scanf(&amp;x);</span><br><span class="line">	while (x!=flag)//建立链表,flag结束标志</span><br><span class="line">	&#123; p=(Lnode *) malloc(m);//建立链表时需要分配空间</span><br><span class="line">	  p-&gt;data=x; //为该节点赋值</span><br><span class="line">          p-&gt;next= r-&gt;next;//r-&gt;next一直都是空的；这个使用的是尾插法，注意比较头插法和尾插法的区别</span><br><span class="line">	  r-&gt;next=p; //让当前的终端节点指向新来的节点</span><br><span class="line">          r=p;</span><br><span class="line">	  scanf(&amp;x);</span><br><span class="line">	&#125;</span><br><span class="line">	return L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//试编写算法实现用头插法建立带头结点的单链表。</span><br><span class="line"></span><br><span class="line">void CreatList_L(LinkList &amp;L, int n) &#123;         1分</span><br><span class="line">  //逆位序输入n个元素的值，建立带表头结点的单链线性表L</span><br><span class="line">  L=(LinkList)malloc(sizeof(LNode));        2分</span><br><span class="line">  L-&gt;next=NULL;  //建立头结点           1分</span><br><span class="line">  for (i=n; i&gt;0; - -i) &#123;                      1分</span><br><span class="line">     p=(LinkList)malloc(sizeof(LNode));     2分</span><br><span class="line">     cin&gt;&gt;p-&gt;data;                       1分</span><br><span class="line">     p-&gt;next=L-&gt;next;                    </span><br><span class="line">     L-&gt;next=p;                         2分</span><br><span class="line">  &#125;</span><br><span class="line">&#125; CreatList_L</span><br><span class="line">//仔细领会头插法和尾插法 的区别，事实上头插法更加简单</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//试写一算法实现带头结点单链表的就地逆置，假设表长大于2 。</span><br><span class="line">Typedef struct Lnode&#123;</span><br><span class="line">ElemType date;</span><br><span class="line">Struct Lnode next;</span><br><span class="line">&#125;LNode,*LinkList;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    LNode *curr,*next;//LinkList curr,next;两个命令是一样的</span><br><span class="line">    curr = L-&gt;next;//第一个节点</span><br><span class="line">    L-&gt;next = NULL;//断开头节点</span><br><span class="line">    while(curr != NULL) &#123;</span><br><span class="line">        next = curr-&gt;next; // 首先得让next临时保存一下curr的下一个节点,以备后面使用。</span><br><span class="line">        curr-&gt;next = L-&gt;next;</span><br><span class="line">        L-&gt;next = curr;// 头插法,注意比较头插法和尾插法的区别</span><br><span class="line">        curr = next;//下一个节点</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//方法：首先定义两个指针，一个指针作用为遍历原链表，另一个用于头插法插入。将L-&gt;NULL设置为空，然后将剩余的节点一一用头插法插入到L中。考点：遍历+头插法建立链表。和上面的题不一样的地方是不需要分配空间了，因为是在原有的链表进行的逆置，已经分配过空间了。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//试参考如下算法实现代码，编写一个算法，对一个有序的单链表，删除所有值大于x而不大于y的结点。首先定义算法使用的数据结构。</span><br><span class="line">typedef int Elemtype;         3分</span><br><span class="line">typedef struct Lnode &#123;</span><br><span class="line">Elemtype data;</span><br><span class="line">struct Lnode *next;</span><br><span class="line">&#125; Lmode, *Linklist;</span><br><span class="line">//假设链表带头结点，-1表示输入参数有错，1表示正确完成操作。</span><br><span class="line">int delsomeval(Linklist  L, Elemtype x, Elemtype y) &#123;</span><br><span class="line">   p=L-&gt;next;</span><br><span class="line">   if (x&gt;y) return -1;//输入的x, y参数不合要求                   </span><br><span class="line">   if (x&gt;p-&gt;data) return -1; //链表中不存在需要查找的数据        </span><br><span class="line">while (p-&gt;data&lt;=x &amp;&amp; p) p=p-&gt;next;//查找待删除结点          </span><br><span class="line">   if (!p) return -1; //链表中不能存在需要查找的数据              </span><br><span class="line">   while (p-&gt;data&gt;x &amp;&amp; p-&gt;data&lt;=y) &#123;                       </span><br><span class="line">q=p-&gt;next;   p-&gt;next=q-&gt;next;//删除并释放需要删除的结点</span><br><span class="line">      free(q);</span><br><span class="line">   &#125;</span><br><span class="line">return 0;                                                          </span><br><span class="line">&#125;</span><br><span class="line">//考点：链表删除节点，另外考虑全可能出现的情况即可。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//串采用如下定义的链式存储结构，试编写算法实现将串t插入在串s中的第i个字符之前。</span><br><span class="line">typedef struct Node&#123;  </span><br><span class="line">  char data;          </span><br><span class="line">  struct LNode *next;   </span><br><span class="line">&#125; *LinkString;</span><br><span class="line">int insert(LinkString &amp;s, LinkString t, int i)            </span><br><span class="line">&#123;</span><br><span class="line">	int k;</span><br><span class="line">	LinkString p,q;</span><br><span class="line">	k=1;</span><br><span class="line">	p=s;</span><br><span class="line">	while(k&lt;i &amp;&amp; p!=NULL) &#123;p=p-&gt;next; k++;&#125;//遍历到p为第i-1个字符</span><br><span class="line">if (p==NULL) return 0;</span><br><span class="line">else&#123;</span><br><span class="line">q=t;//q为t</span><br><span class="line">while(q-&gt;next!=NULL) q=q-&gt;next;//q为t最后一个       </span><br><span class="line">q-&gt;next =p-&gt;next; //t的最后一个指向的是s的第i个                    </span><br><span class="line">p-&gt;next=t;//i-i指向的为t	</span><br><span class="line">&#125;</span><br><span class="line">return 1;</span><br><span class="line">&#125;</span><br><span class="line">//由于是指针类型的，只需要修改前后两个指针就行</span><br></pre></td></tr></table></figure>
+<p><img alt class="post-img b-lazy" href="https://img2020.cnblogs.com/blog/1800791/202012/1800791-20201219142100613-363933322.png" data-src="https://img2020.cnblogs.com/blog/1800791/202012/1800791-20201219142100613-363933322.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*已知一个带头结点的无序单链表，设head为头指针，结点结构如下：</span><br><span class="line">typedef struct node</span><br><span class="line">&#123;	int data;</span><br><span class="line">		Struct node *next;</span><br><span class="line">&#125; LinkList;</span><br><span class="line">试编写算法实现按递增次序输出单链表中各结点的数据元素值，并释放结点所占的存储空间。要求：程序要有必要的注释。</span><br><span class="line">*/</span><br><span class="line">int sortio(LinkList *head)</span><br><span class="line">&#123;	LinkList *p,*q,*r;</span><br><span class="line">		int min;</span><br><span class="line">p=head-&gt;next;              </span><br><span class="line">while(p!=NULL)&#123;</span><br><span class="line">min=p-&gt;data;   //最小值</span><br><span class="line">q=p;   //遍历指针</span><br><span class="line">r=NULL;      //指向min的前驱，初始为NULL       </span><br><span class="line">while(q-&gt;next!=NULL) &#123;</span><br><span class="line">  if(q-&gt;next-&gt;data&lt;min) &#123; r=q;  min=r-&gt;next-&gt;data; &#125;  </span><br><span class="line">q=q-&gt;next;   //找最小值</span><br><span class="line">&#125;	</span><br><span class="line">          cout&lt;&lt;min&lt;&lt;endl;   //输出最小值</span><br><span class="line">		   if (r==NULL) &#123; head-&gt;next=p-&gt;next; free(p); &#125; //第一个结点是最小值</span><br><span class="line">		   else &#123;q=r-&gt;next; r-&gt;next= q-&gt;next;  free(q);&#125;	</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//树的结构体</span><br><span class="line">typedef struct BiTNode &#123;</span><br><span class="line">     TElemType  data;</span><br><span class="line">     struct BiTNode *lchild,；</span><br><span class="line">     struct BiTNode  *rchild;</span><br><span class="line">&#125;BiTNode, *BiTree;      </span><br><span class="line"></span><br><span class="line">//树的先序遍历</span><br><span class="line">void preorder(BTNode *p) &#123;</span><br><span class="line">    if (p != nullptr) &#123;  // 一定要记得判空</span><br><span class="line">        printf(&quot;%c &quot;, p-&gt;data);//写在这就是先序</span><br><span class="line">        preorder(p-&gt;lchild);</span><br><span class="line">// printf(&quot;%c &quot;, p-&gt;data);//写在这就是中序</span><br><span class="line">        preorder(p-&gt;rchild);</span><br><span class="line">// printf(&quot;%c &quot;, p-&gt;data);//写在这就是后序</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//编写算法实现二叉树的复制，要求首先定义算法使用的数据结构。</span><br><span class="line">//定义树的结构体</span><br><span class="line">typedef struct BiTNode &#123;</span><br><span class="line">     TElemType  data;</span><br><span class="line">     struct BiTNode *lchild,；</span><br><span class="line">     struct BiTNode  *rchild;</span><br><span class="line">&#125;BiTNode, *BiTree;                        </span><br><span class="line">//掌握树的递归遍历就很简单了</span><br><span class="line">Bitree Bitree_Copy(Bitree T) </span><br><span class="line">&#123;</span><br><span class="line">if (T) &#123;</span><br><span class="line">       p=(Bitree) malloc(sizeof(BiTNode)); //所有新创建的东西都要分配节点   </span><br><span class="line">	   p-&gt;data=T-&gt;data;//给新创建的节点赋值                    </span><br><span class="line">       p-&gt;lchild=Bitree_Copy(T-&gt;lchild);  //与先序遍历一样的操作    </span><br><span class="line">       p-&gt;rchild=Bitree_Copy(T-&gt;rchild);     </span><br><span class="line">       return p;  </span><br><span class="line">    &#125;</span><br><span class="line">   else return NULL;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*改造如下的二叉树先序遍历算法，实现二叉树的创建。 */</span><br><span class="line">status POT ( BiTree T) &#123;</span><br><span class="line">    if (T) &#123;                         </span><br><span class="line">         cout&lt;&lt;T -&gt; data&lt;&lt;endl；</span><br><span class="line">         POT ( T-&gt;lchild )； </span><br><span class="line">         POT ( T-&gt;rchild )； </span><br><span class="line">	    return OK;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">参考答案：</span><br><span class="line">Status CreateBiTree(BiTree &amp;T) &#123;       </span><br><span class="line">     scanf(&amp;ch);</span><br><span class="line">     if (ch==&apos; &apos;)  T = NULL;          </span><br><span class="line">     else &#123;</span><br><span class="line">        T =( BiTNode *)malloc(sizeof(BiTNode)); </span><br><span class="line">        if (!T) exit(OVERFLOW);</span><br><span class="line">        T-&gt;data = ch;               </span><br><span class="line">        CreateBiTree(T-&gt;lchild);      </span><br><span class="line">        CreateBiTree(T-&gt;rchild);      </span><br><span class="line">     &#125;</span><br><span class="line">return OK;  </span><br><span class="line">&#125;</span><br><span class="line">//与上一题基本一样</span><br></pre></td></tr></table></figure>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="早晨" href="/2020/09/10/早晨/">
+            早晨 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</main>
+
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-线性表部分"><span class="toc-text">1.线性表部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1顺序表"><span class="toc-text">1.1顺序表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2链表"><span class="toc-text">1.2链表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树"><span class="toc-text">树</span></a></li></ol>
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://banpingcu.github.io/img/header.jpg)">
+    <header class="read-next-card-header" style="padding-bottom: 20px">
+        <h3 class="read-next-card-header-title">类型</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机/">计算机</a></li></ul>
+
+        </ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://banpingcu.github.io/img/header.jpg)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">标签</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/C语言/" style="font-size: 24px;">C语言</a> <a href="/tags/Nginx/" style="font-size: 14px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/摄影/" style="font-size: 17.33px;">摄影</a> <a href="/tags/数据结构/" style="font-size: 14px;">数据结构</a> <a href="/tags/新建-模板-小书匠/" style="font-size: 14px;">新建,模板,小书匠</a> <a href="/tags/服务器/" style="font-size: 14px;">服务器</a> <a href="/tags/网络攻防/" style="font-size: 14px;">网络攻防</a> <a href="/tags/网页/" style="font-size: 14px;">网页</a> <a href="/tags/计算机组成原理/" style="font-size: 20.67px;">计算机组成原理</a> <a href="/tags/计算机网络/" style="font-size: 17.33px;">计算机网络</a> <a href="/tags/阳光/" style="font-size: 14px;">阳光</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg" alt="醋小虾">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="醋小虾">醋小虾</a>
+			&copy; 2020
+		</section>
+		<nav class="site-footer-nav">
+			
+            
+            
+    </nav></div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="醋小虾">
+			
+                <img src="https://img2020.cnblogs.com/blog/1800791/202009/1800791-20200911095425530-953711724.jpg" alt="醋小虾 icon">
+			
+            <span>醋小虾</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">数据结构代码部分</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        verify: false,
+        notify: false,
+        appId: '9WD4ifDBAnM3Hq6uExlFM3YP-gzGzoHsz',
+        appKey: 'W5JUxdv9o1jOyXLWICBA2p5h',
+        placeholder: '你就没有什么想说的吗！！',
+        pageSize: 10,
+        avatar: 'mm',
+        visitor: true,
+    });
+</script>
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+</body>
+</html>
