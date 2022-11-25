@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	
+	
+	<link rel="stylesheet" href="/css/allinone.min.css">
+
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>计算机组成原理基础知识 | 醋小虾</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="醋小虾">
+	<meta name="description" content>
+
+	
+	<meta name="keywords" content>
+	
+
+	
+	<link rel="shortcut icon" href="http://bs.cuxiaoxia.cn/uploads/admin/20190523/c4af09615f509f4405c07ea7ce785a24.jpg">
+	<link rel="apple-touch-icon" href="http://bs.cuxiaoxia.cn/uploads/admin/20190523/c4af09615f509f4405c07ea7ce785a24.jpg">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="https://banpingcu.github.io" title="醋小虾">
+	
+
+	<meta property="og:site_name" content="醋小虾">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="计算机组成原理基础知识  醋小虾">
+	<meta property="og:description" content>
+	<meta property="og:url" content="http://yoursite.com/2018/11/02/寻址方式/">
+
+	
+	<meta property="article:published_time" content="2018-11-02T21:11:00+08:00"> 
+	<meta property="article:author" content="醋小虾">
+	<meta property="article:published_first" content="醋小虾, /2018/11/02/寻址方式/">
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header outer" style="z-index: 999">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+              
+               
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+			<li>
+                <a href="http://bs.cuxiaoxia.cn?id=2" title="autor">AUTHOR</a>
+            </li>
+        </ul> 
+    </div>
+    
+    <div class="search-button">
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+    </div>
+     
+
+    <div class="site-nav-right">
+        
+        <a href="#search" class="subscribe-button" style="margin: 0 10px;">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/u/5687948403" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/banpingcu" target="_blank" rel="noopener">
+        <svg viewbox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <section class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2018-11-02T13:01:24.000Z" itemprop="datePublished">
+                    2018-11-2
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/计算机/">计算机</a>&nbsp;&nbsp;
+                
+                
+            </section>
+            <h1 class="post-full-title">计算机组成原理基础知识</h1>
+        </header>
+        <article class="post-full no-image">
+            
+            <section class="post-full-content">
+                <div id="lightgallery" class="markdown-body">
+                    <p>1.计算机系统：由硬件和软件两大部分组成，有多种层次结构。<br>2.主机：CPU、存储器和输入输出接口合起来构成计算机的主机。<br>3.主存：用于存放正在访问的信息<br>4.辅存：用于存放暂时不用的信息。<br>5.高速缓存：用于存放正在访问信息的付本。<br>    6.中央处理器：是计算机的核心部件，由运算器和控制器构成。<br>7.硬件：是指计算机实体部分，它由看得见摸得着的各种电子元器件，各类光、电、机<br>           设备的实物组成。<br>    软件：指看不见摸不着，由人们事先编制的具有各类特殊功能的程序组成。<br>8.系统软件：又称系统程序，主要用来管理整个计算机系统，监视服务，使系统资源得<br>              到合理调度，高效运行。<br>应用软件：又称应用程序，它是用户根据任务需要所编制的各种程序。<br>9.源程序：通常由用户用各种编程语言编写的程序。<br> 目的程序：由计算机将其翻译机器能识别的机器语言程序。<br>10.总线：是连接多个部件的信息传输线，是各部件共享的传输介质。<br>11.系统总线：是指CPU、主存、I/O设备（通过I/O接口）各大部件之间的信息传输线。<br>  通信总线：是指用于计算机系统之间或者计算机系统与其他系统（如控制仪表、移动<br>           通信）之间的通信的线路。按传送方式分并行和串行。串行通信是指数据在单条位宽的传输线上，一位一位的按顺序分时传送。并行通信是指数据在多条并行<br>位宽的传输线上，同时由源传送到目的地。<br> 12.带宽：单位时间内可以传送的最大的信息量。<br> 13.机器字长：是指CPU一次并行处理数据的位数，通常与CPU的寄存器位数有关。<br>14.主存容量：是指主存中存放二进制代码的总位数。<br>15.机器数：符号位数字化，0代表正数，1代表负数。<br>16.定点数：小数点固定在某一位位置的数。<br>17.浮点数：小数点的位置可以浮动的数。<br>18.补码：带符号数据表示方法之一，正数的反码和原码相同，负数的反码是将二进制按位取反后在最低位再加<br>19.溢出：在计算机中，超出机器字长，发生错误的结果。<br>20.非编码键盘：采用软件判断键是否按下及设键、译键、计算键值的方法的键盘。<br>21.A/D转换器：它能将模拟量转换成数字量，是计算机的输入设备。<br>    22.I/O接口：指主机与I/O设备之间设置的一个硬件电路及器相应的软件控制。<br>23.端口：指接口电路中的一些寄存器，用来存放数据信息、控制信息和状态信息。<br>24.中断：计算机在执行程序的过程中，当出现异常情况或特殊请求时，计算机停止现行程序的运行转向对这些异常情况或特殊请求处理，处理结束后再返回到现行程序的间断处，继续执行源程序。<br>25.中断源：凡能向CPU提出中断请求的各种因素统称为中断源。<br>26.中断嵌套：计算机在处理中断的过程中，有可能出现新的中断请求，此时CPU暂停现行中断服务程序，转向新的中断请求，这种现象称为中断嵌套。<br>27.优先级：为使系统能及时响应并处理发生的所有中断，系统根据引起中断事件的重要性和紧迫程度，硬件将中断源分为若干个级别。<br>28.DMA方式：用硬件在主存与外设之间直接进行数据传送，不须CPU，用软件控制。<br>     29.指令系统：将全部机器指令的集合称为机器的指令系统。<br>30.寻址方式：是指确定本条指令的数据地址以及下一条将要执行的指令地址的方法，它与硬件结构紧密相关，而且直接影响指令格式和指令功能。<br>31.指令周期：完成一条指令的时间，由若干机器周期组成。<br> 机器周期：完成摸个独立操作，由若干时钟周期组成。<br> 时钟周期：最基本时间单位，由主频决定。<br>32.微操作：在微程序控制器中，执行部件接受微指令后所进行的最基本的操作。<br>33.微指令：控制器存储的控制代码，分为操作控制部分和顺序控制部分，由微命令组成。<br>34.微程序：存储在控制存储器中的完成指令功能的程序，由微指令组成。<br> 35.控制存储器：CPU内用于存放实现指令系统全部指令的微程序的只读存储器。</p>
+
+                </div>
+            </section>
+        </article>
+    </div>
+
+    
+    <div style="height: 4vw;width: 100%"></div>
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="PPP协议" href="/2018/11/02/PPP协议/">
+            ← PPP协议
+        </a>
+        
+        <span class="prev-next-post">•</span>
+        
+        <a class="next-post" title="计算机组成原理基础知识" href="/2018/11/02/计算机基础知识/">
+            计算机组成原理基础知识 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</main>
+
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        
+    </div>
+</div>
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://banpingcu.github.io/img/header.jpg)">
+    <header class="read-next-card-header" style="padding-bottom: 20px">
+        <h3 class="read-next-card-header-title">类型</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机/">计算机</a></li></ul>
+
+        </ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://banpingcu.github.io/img/header.jpg)">
+	<header class="read-next-card-header" style="padding-bottom: 20px">
+		<h3 class="read-next-card-header-title">标签</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/C语言/" style="font-size: 24px;">C语言</a> <a href="/tags/Nginx/" style="font-size: 14px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/摄影/" style="font-size: 17.33px;">摄影</a> <a href="/tags/新建-模板-小书匠/" style="font-size: 14px;">新建,模板,小书匠</a> <a href="/tags/服务器/" style="font-size: 14px;">服务器</a> <a href="/tags/网页/" style="font-size: 14px;">网页</a> <a href="/tags/计算机组成原理/" style="font-size: 20.67px;">计算机组成原理</a> <a href="/tags/计算机网络/" style="font-size: 17.33px;">计算机网络</a> <a href="/tags/阳光/" style="font-size: 14px;">阳光</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+<div id="search" class="search-overlay subscribe-overlay">
+    <div class="search-form">
+        
+        <img class="search-overlay-logo" src="http://bs.cuxiaoxia.cn/uploads/admin/20190523/c4af09615f509f4405c07ea7ce785a24.jpg" alt="醋小虾">
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<section class="copyright">
+			<a href="/" title="醋小虾">醋小虾</a>
+			&copy; 2022
+		</section>
+		<nav class="site-footer-nav">
+			
+            
+            
+    </nav></div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+<div class="floating-header">
+	<div class="floating-header-logo">
+        <a href="/" title="醋小虾">
+			
+                <img src="http://bs.cuxiaoxia.cn/uploads/admin/20190523/c4af09615f509f4405c07ea7ce785a24.jpg" alt="醋小虾 icon">
+			
+            <span>醋小虾</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">计算机组成原理基础知识</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+
+<script src="/js/mix/post-lazy-local.min.js"></script>
+
+<script>;(function() {var bLazy = new Blazy()})();</script>
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+<script>
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.post-img'
+    });
+</script>
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        verify: false,
+        notify: false,
+        appId: '9WD4ifDBAnM3Hq6uExlFM3YP-gzGzoHsz',
+        appKey: 'W5JUxdv9o1jOyXLWICBA2p5h',
+        placeholder: '你就没有什么想说的吗！！',
+        pageSize: 10,
+        avatar: 'mm',
+        visitor: true,
+    });
+</script>
+
+
+
+
+
+
+<script>searchFunc("/")</script>
+
+
+
+
+
+</body>
+</html>
